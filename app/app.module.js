@@ -1,9 +1,21 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import example from './example/example.module';
+import components from './components/components.module';
 
-require('../assets/styles/main.scss');
+import '../assets/styles/scss/main.scss';
+
 angular.module('app', [
   uirouter,
-  'example'
-]);
+  components
+])
+.config(['$locationProvider', ($locationProvider) => {
+  // $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('');
+}])
+.config(function ($urlRouterProvider) {
+  $urlRouterProvider
+     .when('/', '/home')
+     .when('', '/home')
+     .otherwise('/home');
+});
