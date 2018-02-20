@@ -21,7 +21,7 @@ module.exports = new WebpackConfig().merge({
     ],
     loaders: [{
         test: /\.scss$/,
-        loader: 'style!css?sourceMap!sass?sourceMap&sourceComments'
+        loader: 'style!css?sourceMap!sass?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
     }, {
         test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
         loader: 'url-loader?limit=300'
