@@ -1,14 +1,17 @@
 import angular from 'angular';
+import 'angular-resource';
 import 'angular-animate';
 import uirouter from 'angular-ui-router';
-import example from './example/example.module';
 import components from './components/components.module';
 import shared from './shared/shared.module';
+
+import constants from 'constants';
 
 import '../assets/styles/scss/main.scss';
 
 angular.module('app', [
   'ngAnimate',
+  'ngResource',
   uirouter,
   components,
   shared
@@ -22,4 +25,5 @@ angular.module('app', [
      .when('/', '/home')
      .when('', '/home')
      .otherwise('/home');
-});
+})
+.constant('API_URL', 'http://localhost:3000');

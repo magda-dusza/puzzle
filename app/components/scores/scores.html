@@ -1,3 +1,9 @@
-<div>
-  TOP 10 Scores
+<div class="scores">
+  <div class="scores__title">TOP 10 Scores</div>
+  <div class="scores__board">
+    <div ng-repeat="score in scores.scores.list" class="scores__board--item">
+      <div>{{$index+1}}.&nbsp{{score.userName}}</div>
+      <div>{{score.score}}</div>
+    </div>
+  </div>
 </div>
