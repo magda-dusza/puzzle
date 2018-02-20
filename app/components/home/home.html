@@ -3,7 +3,7 @@
     <div>Let's play!</div>
     <div>Put you're name and click START</div>
     <input/>
-    <a ui-sref="game">
+    <a ui-sref="game" ng-disabled="home.userName==''">
       <button>START</button>
     </a>
   </div>

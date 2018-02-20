@@ -1,4 +1,4 @@
-class HomeController {
+class ScoresController {
   constructor(UserService) {
     this.UserService = UserService;
     this.userName = UserService.userName;
@@ -6,4 +6,4 @@ class HomeController {
 }
 
 /* @ngInject */
-export default HomeController;
+export default ScoresController;

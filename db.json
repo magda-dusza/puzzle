@@ -1,0 +1,64 @@
+{
+  "scores": [
+    {
+      "id": 1,
+      "userName": "PeterPan",
+      "score": 1400
+    },
+    {
+      "id": 2,
+      "userName": "Albert Einstein",
+      "score": 1350
+    },
+    {
+      "id": 3,
+      "userName": "Jack Sparrow",
+      "score": 1250
+    },
+    {
+      "id": 4,
+      "userName": "Cat",
+      "score": 1100
+    },
+    {
+      "id": 5,
+      "userName": "Winni the Pooh",
+      "score": 1000
+    },
+    {
+      "id": 6,
+      "userName": "Darth Vader",
+      "score": 950
+    },
+    {
+      "id": 7,
+      "userName": "Samuel Vimes",
+      "score": 900
+    },
+    {
+      "id": 8,
+      "userName": "Havelock Vetinari",
+      "score": 850
+    },
+    {
+      "id": 9,
+      "userName": "Spiderman",
+      "score": 800
+    },
+    {
+      "id": 10,
+      "userName": "Batman",
+      "score": 700
+    },
+    {
+      "id": 11,
+      "userName": "Frodo",
+      "score": 600
+    },
+    {
+      "id": 12,
+      "userName": "Tim",
+      "score": 550
+    }
+  ]
+}
