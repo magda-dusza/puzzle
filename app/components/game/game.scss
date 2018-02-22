@@ -1,6 +1,43 @@
 $image_path : '../../../assets/img/kotel.jpg';
 
+.game {
+  .nav {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    margin-bottom: 1rem;
+    background-color: orange;
+    box-shadow: 0 0 10px 1px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    .timer {
+
+    }
+  }
+}
+
+.board {
+  background-color:gray;
+  border: 0.5rem solid black;
+  border-radius: 3rem;
+  padding: 1rem;
+  &__row {
+    display: flex;
+
+    &--element{
+      margin: 0.2rem;
+      width: 7rem;
+      height: 7rem;
+      border: 0.1rem solid black;
+      background-color: silver;
+    }
+  }
+}
+
 .puzzle {
+  //pointer-events:none;
   width:7rem;
   height: 7rem;
   background-size: auto 21rem;

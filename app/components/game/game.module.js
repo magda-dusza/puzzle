@@ -6,8 +6,9 @@ import draggable from './draggable.js';
 /* @ngInject */
 
 import './game.scss';
+import user from '../../shared/user/user.module';
 
-let game = angular.module('game', [])
+let game = angular.module('game', [ user ])
   .component('game', component)
   .service('gameService', service)
   .directive('ciDraggable', draggable)

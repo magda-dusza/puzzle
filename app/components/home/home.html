@@ -2,9 +2,9 @@
   <div style="border: 3px solid green; border-radius:1rem; padding: 3rem;">
     <div>Let's play!</div>
     <div>Put you're name and click START</div>
-    <input/>
-    <a ui-sref="game" ng-disabled="home.userName==''">
-      <button>START</button>
+    <input ng-model="home.userName.value"/>
+    <a ui-sref="game">
+      <button ng-disabled="home.userName.value==''">START</button>
     </a>
   </div>
 </div>
