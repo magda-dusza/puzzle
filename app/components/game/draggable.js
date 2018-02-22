@@ -5,18 +5,24 @@ export default function draggable($document, $log) {
     let aim = attr.aim;
 
     var startX = 0, startY = 0, x = 0, y = 0, posX=0, posY=0;
+    let topStart = Math.floor(Math.random()*100);
+    let leftStart = Math.floor(Math.random()*600);
     element.css({
       position: 'absolute',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      top: topStart + 'px',
+      left:  leftStart + 'px'
     });
     element.on('mousedown', (event) => {
       // Prevent default dragging of selected content
-      startX = 0, startY = 0, x = 0, y = 0, posX=0, posY=0;
+      startX = 0, startY = 0, x = leftStart, y = topStart, posX=0, posY=0;
       event.preventDefault();
       startX = event.screenX - x;
       startY = event.screenY - y;
+
       posY = event.screenY - startY;
       posX = event.screenX - startX;
+
       $document.on('mousemove', mousemove);
       $document.on('mouseup', mouseup);
     });
@@ -41,8 +47,8 @@ export default function draggable($document, $log) {
         field.appendChild(element[0]);
       } else {
         element.css({
-          top: posX + 'px',
-          left:  posY + 'px'});
+          top: topStart + 'px',
+          left:  leftStart + 'px'});
       }
       element.css({pointerEvents:'all'});
       $document.off('mousemove', mousemove);
