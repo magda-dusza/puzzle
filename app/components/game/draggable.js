@@ -1,58 +1,65 @@
 /* @ngInject */
 export default function draggable($document, $log) {
 
-  return function drag(scope, element, attr) {
-    let aim = attr.aim;
+  return {
+    scope: {
+      correct: '&',
+      mistake: '&'
+    },
+    link: function (scope, element, attr) {
+      let aim = attr.aim;
 
-    var startX = 0, startY = 0, x = 0, y = 0, posX=0, posY=0;
-    let topStart = Math.floor(Math.random()*100);
-    let leftStart = Math.floor(Math.random()*600);
-    element.css({
-      position: 'absolute',
-      cursor: 'pointer',
-      top: topStart + 'px',
-      left:  leftStart + 'px'
-    });
-    element.on('mousedown', (event) => {
-      // Prevent default dragging of selected content
-      startX = 0, startY = 0, x = leftStart, y = topStart, posX=0, posY=0;
-      event.preventDefault();
-      startX = event.screenX - x;
-      startY = event.screenY - y;
-
-      posY = event.screenY - startY;
-      posX = event.screenX - startX;
-
-      $document.on('mousemove', mousemove);
-      $document.on('mouseup', mouseup);
-    });
-
-    function mousemove(event) {
-      y = event.screenY - startY;
-      x = event.screenX - startX;
+      var startX = 0, startY = 0, x = 0, y = 0, posX = 0, posY = 0;
+      let topStart = Math.floor(Math.random() * 100);
+      let leftStart = Math.floor(Math.random() * 600);
       element.css({
-        top: y + 'px',
-        left:  x + 'px'
+        position: 'absolute',
+        cursor: 'pointer',
+        top: topStart + 'px',
+        left:  leftStart + 'px'
       });
-    }
+      element.on('mousedown', (event) => {
+        // Prevent default dragging of selected content
+        startX = 0, startY = 0, x = leftStart, y = topStart, posX = 0, posY = 0;
+        event.preventDefault();
+        startX = event.screenX - x;
+        startY = event.screenY - y;
 
-    function mouseup(event) {
-      element.css({pointerEvents:'none'});
-      let field = document.elementFromPoint(event.pageX, event.pageY);
-      if (field.id == aim) {
+        posY = event.screenY - startY;
+        posX = event.screenX - startX;
+
+        $document.on('mousemove', mousemove);
+        $document.on('mouseup', mouseup);
+      });
+
+      function mousemove(event) {
+        y = event.screenY - startY;
+        x = event.screenX - startX;
         element.css({
-          position: 'inherit',
-          margin: 0,
-          border: 0});
-        field.appendChild(element[0]);
-      } else {
-        element.css({
-          top: topStart + 'px',
-          left:  leftStart + 'px'});
+          top: y + 'px',
+          left:  x + 'px'
+        });
       }
-      element.css({pointerEvents:'all'});
-      $document.off('mousemove', mousemove);
-      $document.off('mouseup', mouseup);
+
+      function mouseup(event) {
+        element.css({pointerEvents:'none'});
+        let field = document.elementFromPoint(event.pageX, event.pageY);
+        if (field.id == aim) {
+          element.css({
+            position: 'inherit',
+            margin: 0,
+            border: 0});
+          field.appendChild(element[0]);
+          scope.correct();
+        } else {
+          element.css({
+            top: topStart + 'px',
+            left:  leftStart + 'px'});
+        }
+        element.css({pointerEvents:'all'});
+        $document.off('mousemove', mousemove);
+        $document.off('mouseup', mouseup);
+      }
     }
-  };
+  }
 }
