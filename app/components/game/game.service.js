@@ -6,7 +6,8 @@ class GameService {
   }
 
   saveScore(score) {
-    return this.resource(this.API_URL + '/scores').save({userName : this.UserService.userName.value, score:score}).$promise;
+    return this.resource(this.API_URL + '/scores')
+      .save({userName : this.UserService.userName.value, score:score}).$promise;
   }
 }
 /* @ngInject */

@@ -38,7 +38,6 @@ class GameController {
   }
 
   submit() {
-    //save result
     let finalScore = this.score - (this.mistakes * 100) - (Math.floor(this.seconds / 10) * 100);
     this.GameService.saveScore(finalScore).then(()=>{
       this.state.go('scores');

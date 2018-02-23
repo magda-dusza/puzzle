@@ -1,6 +1,6 @@
 class UserService {
   constructor() {
-    this.userName = {value : ''};
+    this.userName = {value : 'test'};
   }
 }
 

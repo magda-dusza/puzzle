@@ -1,4 +1,12 @@
 <div class="scores">
+  <div class="nav">
+    <a ui-sref="home">
+      <button>Change User</button>
+    </a>
+    <a ui-sref="game">
+      <button>Play Again</button>
+    </a>
+  </div>
   <div class="scores__title">TOP 10 Scores</div>
   <div class="scores__board">
     <div ng-repeat="score in scores.scores.list" class="scores__board--item">

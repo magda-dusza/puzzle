@@ -26,4 +26,11 @@ angular.module('app', [
      .when('', '/home')
      .otherwise('/home');
 })
+.run(['$transitions', '$state', 'UserService', ($transitions, $state, UserService) => {
+  $transitions.onSuccess({to:'*'}, function () {
+    if(UserService.userName.value===''){
+      $state.go('home')
+    }
+  });
+}])
 .constant('API_URL', 'http://localhost:3000');
