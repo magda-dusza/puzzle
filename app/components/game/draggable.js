@@ -30,6 +30,7 @@ export default function draggable($document, $log) {
 
         $document.on('mousemove', mousemove);
         $document.on('mouseup', mouseup);
+        element.css({pointerEvents:'none'});
       });
 
       function mousemove(event) {
@@ -42,8 +43,7 @@ export default function draggable($document, $log) {
       }
 
       function mouseup(event) {
-        element.css({pointerEvents:'none'});
-        let field = document.elementFromPoint(event.pageX, event.pageY);
+        let field = event.target;
         if (field.id == aim) {
           element.css({
             position: 'inherit',
@@ -52,6 +52,7 @@ export default function draggable($document, $log) {
           field.appendChild(element[0]);
           scope.correct();
         } else {
+          scope.mistake();
           element.css({
             top: topStart + 'px',
             left:  leftStart + 'px'});
