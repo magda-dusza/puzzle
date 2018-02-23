@@ -59,6 +59,18 @@
       "id": 12,
       "userName": "Tim",
       "score": 550
+    },
+    {
+      "userName": {
+        "value": ""
+      },
+      "score": 1300,
+      "id": 13
+    },
+    {
+      "userName": "",
+      "score": 1100,
+      "id": 14
     }
   ]
 }

@@ -1,5 +1,5 @@
 class GameController {
-  constructor($interval, UserService, $state, $scope) {
+  constructor($interval, UserService, $state, $scope, GameService) {
     this.hello = 'Kotel';
     this.timer = '00:00'
     this.seconds = 0;
@@ -7,6 +7,7 @@ class GameController {
     this.$scope = $scope;
     this.interval = $interval;
     this.UserService = UserService;
+    this.GameService = GameService;
     this.userName = UserService.userName.value || 'XXX';
     this.stop = $interval(this.updateTimer.bind(this), 1000);
     this.score = 1500;
@@ -27,9 +28,7 @@ class GameController {
     this.elementsFit++;
     if (this.elementsFit === 9) {
       this.confirmBox.visible = true;
-      let finalScore = this.score - (this.mistakes * 100) - (Math.floor(this.seconds / 10) * 100);
       this.$scope.$apply();
-      console.log(finalScore);
       this.interval.cancel(this.stop);
     }
   }
@@ -40,7 +39,10 @@ class GameController {
 
   submit() {
     //save result
-    this.state.go('scores');
+    let finalScore = this.score - (this.mistakes * 100) - (Math.floor(this.seconds / 10) * 100);
+    this.GameService.saveScore(finalScore).then(()=>{
+      this.state.go('scores');
+    });
   }
 
   reset() {

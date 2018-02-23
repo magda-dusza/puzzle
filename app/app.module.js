@@ -8,7 +8,6 @@ import shared from './shared/shared.module';
 import constants from 'constants';
 
 import '../assets/styles/scss/main.scss';
-require("../assets/img/kotel.jpg")
 
 angular.module('app', [
   'ngAnimate',
