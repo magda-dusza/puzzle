@@ -6,7 +6,7 @@ class ScoresService {
   }
 
   getAllScores() {
-    this.resource(this.API_URL + '/scores')
+    this.resource(this.API_URL + '/scores?_limit=10&_sort=score&_order=desc')
     .query((response) => {
       this.scores.list = response;
     });
