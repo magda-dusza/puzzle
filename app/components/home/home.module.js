@@ -5,6 +5,8 @@ import service from './home.service';
 
 import user from '../../shared/user/user.module'
 
+import './home.scss';
+
 /* @ngInject */
 
 let home = angular.module('home', [ user ])

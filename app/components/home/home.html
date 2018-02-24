@@ -1,10 +1,14 @@
-<div style="height: 100vh; display: flex; justify-content:center; align-items:center;">
-  <div style="border: 3px solid green; border-radius:1rem; padding: 3rem;">
-    <div>Let's play!</div>
-    <div>Put you're name and click START</div>
-    <input ng-model="home.userName.value"/>
-    <a ui-sref="game">
-      <button ng-disabled="home.userName.value==''">START</button>
-    </a>
+<div class="home">
+  <div class="home__card">
+    <div class="home__card--title">Cat Puzzle</div>
+    <div class="home__card--user">
+      Hello <input ng-model="home.userName.value"/>
+    </div>
+    <div  class="home__card--subtitle">Type your name and start game</div>
+    <div  class="home__card--start-btn">
+      <a ui-sref="game">
+        <button ng-disabled="home.userName.value==''">START</button>
+      </a>
+    </div>
   </div>
 </div>
