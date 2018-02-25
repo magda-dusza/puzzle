@@ -1,0 +1,12 @@
+<div class="dialog-box" ng-if="dialog.display.visible">
+  <div class="dialog-box__card">
+    <div class="dialog-box__card--title"> Success! </div>
+    <div class="dialog-box__card--score"> You scored {{dialog.score.result}} points </div>
+    <div class="dialog-box__card--question"> Try again or Submit Score?</div>
+
+    <div class="dialog-box__card--actions">
+      <button class="normal-btn" ng-click="dialog.resetGame()">Try again</button>
+      <button class="normal-btn" ng-click="dialog.submitScore()">Submit</button>
+    </div>
+  </div>
+</div>

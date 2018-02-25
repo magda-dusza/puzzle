@@ -13,8 +13,6 @@ export default function draggable($document, $log) {
       let topStart = Math.floor(Math.random() * 100);
       let leftStart = Math.floor(Math.random() * 600);
       element.css({
-        position: 'absolute',
-        cursor: 'pointer',
         top: topStart + 'px',
         left:  leftStart + 'px'
       });

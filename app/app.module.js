@@ -28,7 +28,7 @@ angular.module('app', [
 })
 .run(['$transitions', '$state', 'UserService', ($transitions, $state, UserService) => {
   $transitions.onSuccess({to:'*'}, function () {
-    if(UserService.userName.value===''){
+    if (UserService.userName.value === '') {
       $state.go('home')
     }
   });

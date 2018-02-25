@@ -41,23 +41,6 @@ $background_path : '../../../assets/img/puzzle.png';
       margin: 1rem 0;
       padding: 0.5rem;
       text-align: center;
-      button{
-        color:black;
-        font-size: 1.3rem;
-        background: none;
-        background-color:white;
-        border: 1px solid navy;
-        padding: 0.5rem 1rem;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-      }
-      button:hover{
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-      }
-      button:active{
-        color:white;
-        background-color: navy;
-      }
     }
   }
 }

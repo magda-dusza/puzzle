@@ -1,44 +1,43 @@
-<div style="position: absolute; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9998; display:flex; align-items:center; justify-content:center;" ng-if="game.elementsFit===9">
-  <div style="background-color: white; padding: 2rem; z-index: 9999;">
-    <div> Try again or Submit?</div>
-    <div>
-      <button ng-click="game.reset()">Try again</button>
-      <button ng-click="game.submit()">Submit</button>
-    </div>
-  </div>
-
-</div>
+<confirmation-box display="game.confirmBox"
+                  score = "game.finalScore"
+                  submit="game.submit()"
+                  reset="game.reset()"></confirmation-box>
 <div class="game">
-  <div class="nav">
-    <div>
-      <a ui-sref="home">
-        <button>Quit</button>
-      </a>
-    </div>
-    <div>User : {{game.userName}}</div>
-    <div class="timer">
-      {{game.timer}}
+  <div style="width:100%">
+    <div class="nav">
+      <div>
+        <a ui-sref="home">
+          <button class="normal-btn">Quit</button>
+        </a>
+      </div>
+      <div>User : {{game.userName}}</div>
+      <!-- <div style="display:flex; "> -->
+        <div style="padding-right: 0.5rem;">Points: {{game.finalScore.result}}</div>
+        <div style="padding-right: 0.5rem;">Mistakes: {{game.mistakes}}</div>
+        <div class="timer">
+          Time: {{game.timer}}
+        </div>
     </div>
   </div>
-  <div style="display: flex; flex-direction:column; justify-content:center; align-items:center;">
+  <div style="display: flex; flex-direction:column; justify-content:center; align-items:center; background-color:white;width: 50%; padding: 2rem 5rem; border: 3px solid navy ">
     <div class="board">
-    <div class="board__row">
-      <div id="f11" class="board__row--element"></div>
-      <div id="f12" class="board__row--element"></div>
-      <div id="f13" class="board__row--element"></div>
+      <div class="board__row">
+        <div id="f11" class="board__row--element"></div>
+        <div id="f12" class="board__row--element"></div>
+        <div id="f13" class="board__row--element"></div>
+      </div>
+      <div class="board__row">
+        <div id="f21" class="board__row--element"></div>
+        <div id="f22" class="board__row--element"></div>
+        <div id="f23" class="board__row--element"></div>
+      </div>
+      <div class="board__row">
+        <div id="f31" class="board__row--element"></div>
+        <div id="f32" class="board__row--element"></div>
+        <div id="f33" class="board__row--element"></div>
+      </div>
     </div>
-    <div class="board__row">
-      <div id="f21" class="board__row--element"></div>
-      <div id="f22" class="board__row--element"></div>
-      <div id="f23" class="board__row--element"></div>
-    </div>
-    <div class="board__row">
-      <div id="f31" class="board__row--element"></div>
-      <div id="f32" class="board__row--element"></div>
-      <div id="f33" class="board__row--element"></div>
-    </div>
-  </div>
-    <div style="position:relative; width: 50%; background-color: silver; height: 15rem; margin: 1rem 0;">
+    <div style="position:relative; width: 100%; background-color: #f9c377; height: 15rem; margin: 1rem 0;">
         <div ci-draggable aim="f11" correct="game.correct()" mistake="game.mistake()"  class="puzzle element11"></div>
         <div ci-draggable aim="f12" correct="game.correct()" mistake="game.mistake()" class="puzzle element12"></div>
         <div ci-draggable aim="f13" correct="game.correct()" mistake="game.mistake()" class="puzzle element13"></div>
@@ -48,11 +47,6 @@
         <div ci-draggable aim="f31" correct="game.correct()" mistake="game.mistake()" class="puzzle element31"></div>
         <div ci-draggable aim="f32" correct="game.correct()" mistake="game.mistake()" class="puzzle element32"></div>
         <div ci-draggable aim="f33" correct="game.correct()" mistake="game.mistake()" class="puzzle element33"></div>
-      <div>
-      <a ui-sref="scores">
-        <button>Finish</button>
-      </a>
     </div>
   </div>
-
 </div>
