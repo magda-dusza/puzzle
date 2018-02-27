@@ -22,31 +22,31 @@
   <div style="display: flex; flex-direction:column; justify-content:center; align-items:center; background-color:white;width: 50%; padding: 2rem 5rem; border: 3px solid navy ">
     <div class="board">
       <div class="board__row">
-        <div id="f11" class="board__row--element"></div>
-        <div id="f12" class="board__row--element"></div>
-        <div id="f13" class="board__row--element"></div>
+        <div id="t11" class="board__row--element"></div>
+        <div id="t12" class="board__row--element"></div>
+        <div id="t13" class="board__row--element"></div>
       </div>
       <div class="board__row">
-        <div id="f21" class="board__row--element"></div>
-        <div id="f22" class="board__row--element"></div>
-        <div id="f23" class="board__row--element"></div>
+        <div id="t21" class="board__row--element"></div>
+        <div id="t22" class="board__row--element"></div>
+        <div id="t23" class="board__row--element"></div>
       </div>
       <div class="board__row">
-        <div id="f31" class="board__row--element"></div>
-        <div id="f32" class="board__row--element"></div>
-        <div id="f33" class="board__row--element"></div>
+        <div id="t31" class="board__row--element"></div>
+        <div id="t32" class="board__row--element"></div>
+        <div id="t33" class="board__row--element"></div>
       </div>
     </div>
-    <div style="position:relative; width: 100%; background-color: #f9c377; height: 15rem; margin: 1rem 0;">
-        <div ci-draggable aim="f11" correct="game.correct()" mistake="game.mistake()"  class="puzzle element11"></div>
-        <div ci-draggable aim="f12" correct="game.correct()" mistake="game.mistake()" class="puzzle element12"></div>
-        <div ci-draggable aim="f13" correct="game.correct()" mistake="game.mistake()" class="puzzle element13"></div>
-        <div ci-draggable aim="f21" correct="game.correct()" mistake="game.mistake()" class="puzzle element21"></div>
-        <div ci-draggable aim="f22" correct="game.correct()"  mistake="game.mistake()"class="puzzle element22"></div>
-        <div ci-draggable aim="f23" correct="game.correct()" mistake="game.mistake()" class="puzzle element23"></div>
-        <div ci-draggable aim="f31" correct="game.correct()" mistake="game.mistake()" class="puzzle element31"></div>
-        <div ci-draggable aim="f32" correct="game.correct()" mistake="game.mistake()" class="puzzle element32"></div>
-        <div ci-draggable aim="f33" correct="game.correct()" mistake="game.mistake()" class="puzzle element33"></div>
+    <div style="position:relative; width: 100%; background-color: #f9c377; height: 15rem; margin: 1rem 0;" >
+        <div ci-draggable target="t11" correct="game.correct()" mistake="game.mistake()"  class="{{game.kotel}} puzzle element11"></div>
+        <div ci-draggable target="t12" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element12"></div>
+        <div ci-draggable target="t13" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element13"></div>
+        <div ci-draggable target="t21" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element21"></div>
+        <div ci-draggable target="t22" correct="game.correct()" mistake="game.mistake()"class="{{game.kotel}} puzzle element22"></div>
+        <div ci-draggable target="t23" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element23"></div>
+        <div ci-draggable target="t31" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element31"></div>
+        <div ci-draggable target="t32" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element32"></div>
+        <div ci-draggable target="t33" correct="game.correct()" mistake="game.mistake()" class="{{game.kotel}} puzzle element33"></div>
     </div>
   </div>
 </div>

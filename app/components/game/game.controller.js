@@ -15,6 +15,10 @@ class GameController {
     this.mistakes = 0;
     this.confirmBox = {visible : false};
     this.finalScore = {result : 1500};
+
+    this.targetIds = ['t11', 't12', 't13', 't21', 't22', 't23', 't31', 't32', 't33'];
+    this.kotel = 'kotel1';
+    // this.targetIds = ['11', 't12', 't13', 't21', 't22', 't23', 't31', 't32', 't33'];
   }
 
   updateTimer() {

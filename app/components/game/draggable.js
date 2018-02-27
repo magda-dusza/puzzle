@@ -7,7 +7,7 @@ export default function draggable($document, $log) {
       mistake: '&'
     },
     link: function (scope, element, attr) {
-      let aim = attr.aim;
+      let target = attr.target;
 
       var startX = 0, startY = 0, x = 0, y = 0, posX = 0, posY = 0;
       let topStart = Math.floor(Math.random() * 100);
@@ -17,9 +17,9 @@ export default function draggable($document, $log) {
         left:  leftStart + 'px'
       });
       element.on('mousedown', (event) => {
-        // Prevent default dragging of selected content
         startX = 0, startY = 0, x = leftStart, y = topStart, posX = 0, posY = 0;
         event.preventDefault();
+
         startX = event.screenX - x;
         startY = event.screenY - y;
 
@@ -42,7 +42,7 @@ export default function draggable($document, $log) {
 
       function mouseup(event) {
         let field = event.target;
-        if (field.id == aim) {
+        if (field.id == target) {
           element.css({
             position: 'inherit',
             margin: 0,

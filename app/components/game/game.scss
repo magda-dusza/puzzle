@@ -1,5 +1,19 @@
 $image_path : '../../../assets/img/kotel.jpg';
 $background_path : '../../../assets/img/puzzle.png';
+$background_path_kot2 : '../../../assets/img/kot2.jpg';
+$background_path_kot3 : '../../../assets/img/kot3.jpg';
+
+.kotel1 {
+  background-image: url($image_path);
+}
+
+.kotel2 {
+  background-image: url($background_path_kot2);
+}
+
+.kotel3 {
+  background-image: url($background_path_kot3);
+}
 
 .game {
   background-image: url($background_path);
@@ -54,7 +68,6 @@ $background_path : '../../../assets/img/puzzle.png';
   width:7rem;
   height: 7rem;
   background-size: auto 21rem;
-  background-image: url($image_path);
   margin: 0.2rem;
   border: 2px solid black;
   position: absolute;
@@ -95,4 +108,12 @@ $background_path : '../../../assets/img/puzzle.png';
 
 .element33 {
   background-position:-14rem -14rem;
+}
+
+.blink_me {
+  animation: blinker 1s linear 1;
+}
+
+@keyframes blinker {
+  50% { background-color: #dd0000; }
 }
