@@ -7,7 +7,7 @@ class ScoresController {
     this.scores = ScoresService.scores;
   }
   $onInit() {
-    this.ScoresService.getAllScores();
+    this.ScoresService.getTop10Scores();
   }
 }
 

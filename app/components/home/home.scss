@@ -1,12 +1,8 @@
-$background_path : '../../../assets/img/puzzle.png';
-
 .home {
   height: 100vh;
   display: flex;
   justify-content:center;
   align-items:center;
-  background-image: url($background_path);
-  background-size: cover;
   font-family: "Comic Sans MS", cursive, sans-serif;
   &__card {
 

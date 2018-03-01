@@ -1,4 +1,8 @@
+$background_path : '../../../assets/img/puzzle.png';
+
 body {
   margin: 0;
   padding: 0;
+  background-image: url($background_path);
+  background-size: cover;
 }

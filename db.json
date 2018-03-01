@@ -74,6 +74,11 @@
       "userName": "test",
       "score": 1500,
       "id": 15
+    },
+    {
+      "userName": "Magda",
+      "score": 1300,
+      "id": 16
     }
   ]
 }
