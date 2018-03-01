@@ -64,14 +64,14 @@ $kotel3_path : '../../../assets/img/kot3.jpg';
       border: 0.1rem solid black;
       background-color: #d5dce0;
       &:hover{
-        background-color: #fba82e;
+        background-color: lightblue;
       }
     }
   }
 }
 
 .puzzle {
-  //pointer-events:none;
+
   width:7rem;
   height: 7rem;
   background-size: auto 21rem;
@@ -119,8 +119,4 @@ $kotel3_path : '../../../assets/img/kot3.jpg';
 
 .blink_me {
   animation: blinker 1s linear 1;
-}
-
-@keyframes blinker {
-  50% { background-color: #dd0000; }
 }

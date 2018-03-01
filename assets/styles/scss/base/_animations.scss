@@ -1,0 +1,15 @@
+@-webkit-keyframes blink {
+    0% {
+        background-color: #dd0000;
+    }
+    100% {
+        background-color: #d5dce0;
+    }
+}
+
+.blink {
+    -webkit-animation-name: blink;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+}

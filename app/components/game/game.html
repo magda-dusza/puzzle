@@ -38,10 +38,10 @@
     </div>
     <div style="position:relative; width: 100%; background-color: #f9c377; height: 15rem; margin: 1rem 0;" >
         <div ng-repeat="pos in game.positions track by $index"
-             ci-draggable target="{{::game.getTarget($index)}}"
+             ci-draggable target="::game.getTarget($index)"
              correct="game.correct()"
              mistake="game.mistake()"
-             class="{{game.kotel}} puzzle {{::game.getElement($index)}}"></div>
+             class="{{::game.kotel}} puzzle {{::game.getElement($index)}}"></div>
     </div>
   </div>
 </div>

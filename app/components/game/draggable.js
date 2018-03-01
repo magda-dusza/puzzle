@@ -1,35 +1,45 @@
 /* @ngInject */
-export default function draggable($document, $log) {
+export default function draggable($document, $log, $timeout) {
 
   return {
     scope: {
+      target: '<',
       correct: '&',
       mistake: '&'
     },
     link: function (scope, element, attr) {
-      let target = attr.target;
 
-      var startX = 0, startY = 0, x = 0, y = 0, posX = 0, posY = 0;
-      let topStart = Math.floor(Math.random() * 100);
-      let leftStart = Math.floor(Math.random() * 600);
+      var startX = 0, startY = 0, x = 0, y = 0;
+
+      let topToParent = Math.floor(Math.random() * element.parent()[0].offsetHeight) - 120;
+      topToParent = topToParent > 0 ? topToParent : 0;
+
+
+      let leftToParent = Math.floor(Math.random() * element.parent()[0].offsetWidth - 120);
+      leftToParent = leftToParent > 0 ? leftToParent : 0;
+
       element.css({
-        top: topStart + 'px',
-        left:  leftStart + 'px'
+        top: topToParent + 'px',
+        left:  leftToParent + 'px'
       });
+
       element.on('mousedown', (event) => {
-        startX = 0, startY = 0, x = leftStart, y = topStart, posX = 0, posY = 0;
+        if (isElementMatched()) { return; }
+
+        startX = 0, startY = 0, x = leftToParent, y = topToParent;
         event.preventDefault();
 
         startX = event.screenX - x;
         startY = event.screenY - y;
 
-        posY = event.screenY - startY;
-        posX = event.screenX - startX;
-
         $document.on('mousemove', mousemove);
         $document.on('mouseup', mouseup);
         element.css({pointerEvents:'none'});
       });
+
+      function isElementMatched() {
+        return element.parent()[0].id === scope.target;
+      }
 
       function mousemove(event) {
         y = event.screenY - startY;
@@ -41,21 +51,48 @@ export default function draggable($document, $log) {
       }
 
       function mouseup(event) {
-        let field = event.target;
-        if (field.id == target) {
-          element.css({
-            position: 'inherit',
-            margin: 0,
-            border: 0});
-          field.appendChild(element[0]);
-          scope.correct();
+        let target = event.target;
+
+        if (target.id === scope.target) {
+          addElementToBoard(target);
         } else {
-          scope.mistake();
-          element.css({
-            top: topStart + 'px',
-            left:  leftStart + 'px'});
+          moveBack(target);
         }
+
+        clean();
+      }
+
+      function addElementToBoard(target) {
+        element.css({
+          position: 'inherit',
+          margin: 0,
+          border: 0});
+        target.appendChild(element[0]);
+
+        scope.correct();
+      }
+
+      function moveBack(target) {
+        element.css({
+          top: topToParent + 'px',
+          left:  leftToParent + 'px'});
+
+        blink(target);
+
+        scope.mistake();
+      }
+
+      function blink(target) {
+        let targetElement = angular.element(target);
+        if (targetElement.attr('class').indexOf('board__row--element') > -1) {
+          targetElement.addClass('blink');
+          $timeout(function() { targetElement.removeClass('blink') }, 1000);
+        }
+      }
+
+      function clean() {
         element.css({pointerEvents:'all'});
+
         $document.off('mousemove', mousemove);
         $document.off('mouseup', mouseup);
       }
