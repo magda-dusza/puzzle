@@ -8,8 +8,9 @@ import draggable from './draggable.js';
 import './game.scss';
 import user from '../../shared/user/user.module';
 import confirmationBox from './confirmation-box/confirmation-box.module';
+import timer from './timer/timer.module';
 
-let game = angular.module('game', [user, confirmationBox])
+let game = angular.module('game', [user, confirmationBox, timer])
   .component('game', component)
   .service('GameService', service)
   .directive('ciDraggable', draggable)
