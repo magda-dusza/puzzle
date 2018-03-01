@@ -9,11 +9,11 @@ class TimerController {
   }
 
   updateTimer() {
-    this.seconds++;
-    let minute = Math.floor(this.seconds / 60);
-    let seconds = this.seconds % 60;
+    this.seconds.value++;
+    let minute = Math.floor(this.seconds.value / 60);
+    let seconds = this.seconds.value % 60;
     this.time = `${minute > 9 ? minute : '0' + minute}:${seconds > 9 ? seconds : '0' + seconds}`;
-    if (this.seconds % 10 === 0) {
+    if (this.seconds.value % 10 === 0) {
       this.calc();
     }
   }

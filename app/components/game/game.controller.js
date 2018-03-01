@@ -1,19 +1,23 @@
 class GameController {
-  constructor(UserService, $state, $scope, GameService) {
-    this.state = $state;
+  constructor($scope, UserService, GameService) {
     this.$scope = $scope;
     this.UserService = UserService;
     this.GameService = GameService;
-    this.seconds = 0;
-    this.userName = UserService.userName.value;
-    this.score = 1500;
-    this.elementsFit = 0;
-    this.mistakes = 0;
-    this.confirmBox = {visible : false};
-    this.finalScore = {result : 1500};
 
-    this.kotel = 'kotel1';
-    this.positions = ['11', '12', '13', '21', '22', '23', '31', '32', '33'];
+    this.seconds = GameService.seconds;
+    this.mistakes = GameService.mistakes;
+    this.positions = GameService.positions;
+    this.finalScore = GameService.finalScore;
+
+    this.userName = UserService.userName.value;
+    this.kotel = UserService.pictureName.kotel;
+
+    this.elementsFit = 0;
+    this.confirmBox = {visible : false};
+  }
+
+  $onInit() {
+    this.GameService.initGame();
   }
 
   correct() {
@@ -31,23 +35,19 @@ class GameController {
   }
 
   submit() {
-    this.GameService.saveScore(this.finalScore.result).then(()=>{
-      this.state.go('scores');
-    });
+    this.GameService.saveScore(this.UserService.userName, this.finalScore.result);
   }
 
   reset() {
-    this.state.go(this.state.current, {}, {reload: true});
+    this.GameService.reset();
   }
 
   calcScore() {
-    let timePoints = (Math.floor(this.seconds / 10) * 100);
-    this.finalScore.result = this.score - (this.mistakes * 100) - timePoints;
+    this.GameService.calcScore();
   }
 
   getTarget(pos) {
-    let a = `t${this.positions[pos]}`;
-    return a;
+    return `t${this.positions[pos]}`;
   }
 
   getElement(pos) {
