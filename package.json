@@ -53,6 +53,7 @@
     "node-sass": "^4.1.1",
     "protractor": "^4.0.14",
     "require-dir": "^0.3.0",
+    "required-loader": "^1.3.16",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "svg-inline-loader": "^0.4.1",

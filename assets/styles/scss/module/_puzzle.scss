@@ -1,0 +1,61 @@
+$kotel1_path : '../../../assets/img/kotel.jpg';
+$kotel2_path : '../../../assets/img/kot2.jpg';
+$kotel3_path : '../../../assets/img/kot3.jpg';
+
+.puzzle {
+  width:7rem;
+  height: 7rem;
+  background-size: auto 21rem;
+  margin: 0.2rem;
+  border: 2px solid black;
+  position: absolute;
+  cursor: pointer;
+}
+
+.kotel1 {
+  background-image: url($kotel1_path);
+}
+
+.kotel2 {
+  background-image: url($kotel2_path);
+}
+
+.kotel3 {
+  background-image: url($kotel3_path);
+}
+
+.element11 {
+  background-position:0 0;
+}
+
+.element12 {
+  background-position:-7rem 0;
+}
+
+.element13 {
+  background-position:-14rem 0;
+}
+
+.element21 {
+  background-position:0 -7rem;
+}
+
+.element22 {
+  background-position:-7rem -7rem;
+}
+
+.element23 {
+  background-position:-14rem -7rem;
+}
+
+.element31 {
+  background-position:0 -14rem;
+}
+
+.element32 {
+  background-position:-7rem -14rem;
+}
+
+.element33 {
+  background-position:-14rem -14rem;
+}

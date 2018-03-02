@@ -3,14 +3,14 @@
                   submit="game.submit()"
                   reset="game.reset()"></confirmation-box>
 <div class="game">
-  <div style="width:100%">
-    <div class="nav">
+  <div class="game__nav-container">
+    <div class="game__nav-container--bar">
       <div>
         <a ui-sref="home">
           <button class="normal-btn">Quit</button>
         </a>
       </div>
-      <div>User : {{game.userName}}</div>
+      <div>User : {{::game.userName}}</div>
       <div>Points: {{game.finalScore.result}}</div>
       <div>Mistakes: {{game.mistakes.value}}</div>
       <div>
@@ -19,24 +19,8 @@
     </div>
   </div>
   <div class="game__container">
-    <div class="board">
-      <div class="board__row">
-        <div id="t11" class="board__row--element"></div>
-        <div id="t12" class="board__row--element"></div>
-        <div id="t13" class="board__row--element"></div>
-      </div>
-      <div class="board__row">
-        <div id="t21" class="board__row--element"></div>
-        <div id="t22" class="board__row--element"></div>
-        <div id="t23" class="board__row--element"></div>
-      </div>
-      <div class="board__row">
-        <div id="t31" class="board__row--element"></div>
-        <div id="t32" class="board__row--element"></div>
-        <div id="t33" class="board__row--element"></div>
-      </div>
-    </div>
-    <div style="position:relative; width: 100%; background-color: #f9c377; height: 15rem; margin: 1rem 0;" >
+    <board></board>
+    <div class="game__container--mix mix" >
         <div ng-repeat="pos in game.positions track by $index"
              ci-draggable target="::game.getTarget($index)"
              correct="game.correct()"

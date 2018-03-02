@@ -1,0 +1,19 @@
+.board {
+  background-color:#006eac;
+  border: 3px solid navy;
+  padding: 1rem;
+  &__row {
+    display: flex;
+
+    &--element{
+      margin: 0.2rem;
+      width: 7rem;
+      height: 7rem;
+      border: 0.1rem solid black;
+      background-color: #d5dce0;
+      &:hover{
+        background-color: lightblue;
+      }
+    }
+  }
+}
