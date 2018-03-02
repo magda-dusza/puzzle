@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/scss/base/variables';
+
 .scores-nav {
   height: 2rem;
   display: flex;
@@ -5,12 +7,11 @@
   align-items: center;
   padding: 1rem 3rem;
   margin-bottom: 1rem;
-  background-color: orange;
   box-shadow: 0 0 20px 1px rgba(0,0,0,0.9);
   font-size: 1.3rem;
   font-weight: bold;
-  background-color:MidnightBlue ;
-  color:Cornsilk;
+  background-color: $dark-blue ;
+  color: $light-gray;
   &__actions{
     a {
       padding-left: 1rem;

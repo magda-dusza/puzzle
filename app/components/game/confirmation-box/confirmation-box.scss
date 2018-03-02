@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/scss/base/variables';
+
 .dialog-box {
   position: absolute;
   left: 0;
@@ -11,7 +13,7 @@
   justify-content:center;
   &__card {
     background-color: white;
-    border: 3px solid navy;
+    border: 3px solid $dark-blue;
     padding: 2rem 6rem;
     z-index: 9999;
     text-align: center;
@@ -23,12 +25,12 @@
     }
     &--score {
       font-size: 1.5rem;
-      color: #0e0e0e;
+      color: $dark-gray;
       padding-bottom: 0.5rem;
     }
     &--question {
       font-size: 1rem;
-      color:navy;
+      color: $dark-blue;
       padding-bottom: 1rem;
     }
     &--actions {

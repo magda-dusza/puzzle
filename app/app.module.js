@@ -5,8 +5,6 @@ import uirouter from 'angular-ui-router';
 import components from './components/components.module';
 import shared from './shared/shared.module';
 
-import constants from 'constants';
-
 import '../assets/styles/scss/main.scss';
 
 angular.module('app', [

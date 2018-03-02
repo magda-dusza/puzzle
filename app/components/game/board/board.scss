@@ -1,18 +1,20 @@
+@import '../../../../assets/styles/scss/base/variables';
+
 .board {
-  background-color:#006eac;
-  border: 3px solid navy;
+  background-color: $blue;
+  border: 3px solid $dark-blue;
   padding: 1rem;
   &__row {
     display: flex;
 
     &--element{
       margin: 0.2rem;
-      width: 7rem;
-      height: 7rem;
+      width: $elem-size;
+      height: $elem-size;
       border: 0.1rem solid black;
-      background-color: #d5dce0;
+      background-color: $light-blue;
       &:hover{
-        background-color: SkyBlue ;
+        background-color: $sky-blue;
       }
     }
   }
