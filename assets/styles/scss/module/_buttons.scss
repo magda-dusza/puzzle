@@ -1,3 +1,5 @@
+@import '../base/_variables';
+
 .normal-btn {
   color:black;
   font-size: 1.3rem;
@@ -13,5 +15,9 @@
   &:active{
     color:white;
     background-color: navy;
+  }
+  &:disabled{
+    color: $gray;
+    border: 1px solid $gray;
   }
 }

@@ -67,7 +67,9 @@
   "scripts": {
     "pretest": "webdriver-manager update",
     "test": "karma start",
-    "start": "json-server --watch db.json | webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
+    "full": "json-server --watch db.json | webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
+    "server": "json-server --watch db.json",
+    "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
     "build": "webpack --config webpack.config.prod.babel.js --progress --profile --colors"
   }
 }

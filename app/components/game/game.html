@@ -4,7 +4,7 @@
                     submit="game.submit()"
                     reset="game.reset()"></confirmation-box>
   <div class="game__nav-container">
-    <div class="game__nav-container--bar">
+    <div class="game__nav-container--bar bar">
       <div>
         <a ui-sref="home">
           <button class="normal-btn">Quit</button>
@@ -14,7 +14,7 @@
         </a>
       </div>
       <div>User : {{::game.userName}}</div>
-      <div>Points: {{game.finalScore.result}}</div>
+      <div class="bar__points">Points: {{game.finalScore.result}}</div>
       <div>Mistakes: {{game.mistakes.value}}</div>
       <div>
         <timer seconds="game.seconds"

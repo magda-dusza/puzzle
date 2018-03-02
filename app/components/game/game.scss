@@ -20,6 +20,11 @@
       background-color: $dark-blue;
       color: $light-gray;
     }
+    .bar {
+      &__points {
+        width: 8rem;
+      }
+    }
   }
   &__container {
     display: flex;
