@@ -1,0 +1,19 @@
+<div class="level">
+  <div class="level__container">
+    <div class="level__container--title">Choose Picture</div>
+    <div class="level__container--pictures">
+      <div ng-repeat="pic in level.pictures track by pic.id" class="level__pictures--card card">
+        <div class="card__title">{{pic.title}}</div>
+        <img ng-class=" { 'active' : level.active[$index] }" ng-click="level.makeActive($index)" ng-src="{{pic.src}}"/>
+      </div>
+    </div>
+    <div class="level__container--actions">
+      <a ui-sref="home">
+        <button class="normal-btn" >Back</button>
+      </a>
+      <a ui-sref="game">
+        <button class="normal-btn" >Start</button>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.level {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  &__container {
+    margin: 3rem 0;
+    background-color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:3px solid navy;
+    &--title {
+      font-size: 2rem;
+      font-weight: bold;
+      padding:1rem 0;
+    }
+    &--pictures {
+      display:flex;
+      .card {
+        margin: 1rem;
+        &__title {
+            font-size: 1.5rem;
+            margin:0.5rem;
+            text-align: center;
+        }
+        img {
+          width: 20rem;
+          height: auto;
+          border: 5px solid silver;
+        }
+        .active {
+          border: 5px solid blue;
+        }
+      }
+    }
+    &--actions {
+      margin: 1rem 0;
+      a {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
