@@ -13,6 +13,7 @@ class GameService {
   }
 
   initGame() {
+    this.finalScore.result = this.SCORE;
     this.seconds.value = 0;
     this.mistakes.value = 0;
   }

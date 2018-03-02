@@ -14,6 +14,7 @@ class GameController {
 
     this.elementsFit = 0;
     this.confirmBox = {visible : false};
+    this.gameOver = false;
   }
 
   $onInit() {
@@ -23,6 +24,7 @@ class GameController {
   correct() {
     this.elementsFit++;
     if (this.elementsFit === 9) {
+      this.gameOver = true;
       this.calcScore();
       this.confirmBox.visible = true;
       this.$scope.$apply();
@@ -30,7 +32,7 @@ class GameController {
   }
 
   mistake() {
-    this.mistakes++;
+    this.mistakes.value++;
     this.calcScore();
   }
 

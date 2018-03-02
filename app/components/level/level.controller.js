@@ -9,9 +9,9 @@ class LevelController {
     ];
     this.active = [true, false, false];
   }
-  makeActive(index){
-    let i =0, length = this.active.length;
-    for(i=0; i<length;i++){
+  makeActive(index) {
+    let i = 0, length = this.active.length;
+    for (i = 0; i < length; i++) {
       this.active[i] = false;
     }
     this.active[index] = true;

@@ -1,8 +1,8 @@
-<confirmation-box display="game.confirmBox"
-                  score = "game.finalScore"
-                  submit="game.submit()"
-                  reset="game.reset()"></confirmation-box>
 <div class="game">
+  <confirmation-box display="game.confirmBox"
+                    score = "game.finalScore"
+                    submit="game.submit()"
+                    reset="game.reset()"></confirmation-box>
   <div class="game__nav-container">
     <div class="game__nav-container--bar">
       <div>
@@ -17,7 +17,9 @@
       <div>Points: {{game.finalScore.result}}</div>
       <div>Mistakes: {{game.mistakes.value}}</div>
       <div>
-        <timer seconds="game.seconds" calc="game.calcScore()"></timer>
+        <timer seconds="game.seconds"
+               calc="game.calcScore()"
+               game-over="game.gameOver"></timer>
       </div>
     </div>
   </div>
